@@ -1,0 +1,37 @@
+---
+- name: Install and configure Nginx on all web servers
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Ensure apt cache is updated
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Ensure /var/www/html exists
+      file:
+        path: /var/www/html
+        state: directory
+        owner: www-data
+        group: www-data
+        mode: '0755'
+
+    - name: Deploy nginx HTML page
+      template:
+        src: templates/index.html.j2
+        dest: /var/www/html/index.html
+        owner: www-data
+        group: www-data
+        mode: '0644'
+
+    - name: Ensure nginx is started and enabled
+      service:
+        name: nginx
+        state: started
+        enabled: yes

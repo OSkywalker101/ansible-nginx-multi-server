@@ -1,0 +1,5 @@
+[webservers]
+web1 ansible_host=10.240.184.138 ansible_user=ubuntu
+web2 ansible_host=10.240.184.121 ansible_user=ubuntu
+web3 ansible_host=10.240.184.37 ansible_user=ubuntu
+

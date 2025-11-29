@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DevOps Project – Ansible Nginx</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 40px 50px;
+      border-radius: 18px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      width: 70%;
+      max-width: 650px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: #38bdf8;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      color: #a5f3fc;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+
+    .team {
+      margin-top: 28px;
+      font-size: 1rem;
+      color: #fef3c7;
+      font-weight: bold;
+    }
+
+    .hostname {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>DevOps Project</h1>
+    <h2>Automated Deployment with Ansible & Nginx</h2>
+
+    <p>This webpage has been successfully deployed using <strong>Ansible</strong> 
+    and is being served through <strong>Nginx</strong>.</p>
+
+    <p class="team">Team Members – Oliver, Vivek, Navya</p>
+
+    <p class="hostname">Server: {{ inventory_hostname }}</p>
+  </div>
+</body>
+</html>
+
